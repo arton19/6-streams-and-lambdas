@@ -1,5 +1,7 @@
 package part02;
 
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 /**
@@ -30,7 +32,16 @@ public class OptionalValues {
          * is empty.
          */
 
-        return -1; // TODO
+        OptionalDouble keskiarvo = stream.average();
+
+        double luku = 0.0;
+
+        if (keskiarvo.isPresent()){
+            double luvunKeskiarvo = keskiarvo.getAsDouble();
+            return luvunKeskiarvo;
+        } else {
+            return luku;
+        }
     }
 
     /**
@@ -41,6 +52,16 @@ public class OptionalValues {
      * @return the maximum value in the stream or 0 if the stream is empty
      */
     public int maximum(IntStream stream) {
-        return -1; // TODO: see the IntStream documentation
+
+        IntStream luvutSteam = stream;
+
+        OptionalInt maksimi = luvutSteam.max();
+
+        if (maksimi.isPresent()){
+            int maksimiLuku = maksimi.getAsInt();
+            return maksimiLuku;
+        } else {
+            return 0;
+        } 
     }
 }
