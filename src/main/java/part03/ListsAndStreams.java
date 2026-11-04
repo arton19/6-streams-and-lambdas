@@ -22,7 +22,8 @@ public class ListsAndStreams {
         /*
          * hint: see the documentation of List about how to create a Stream from a List.
          */
-        return null; // TODO
+        Stream<String> stream = strings.stream();
+        return stream;
     }
 
     /**
@@ -32,7 +33,9 @@ public class ListsAndStreams {
      * @return a List of the same strings
      */
     public List<String> makeList(Stream<String> stream) {
-        return null; // TODO
+
+        List<String> lista = stream.toList();
+        return lista; 
     }
 
     /**
@@ -47,7 +50,12 @@ public class ListsAndStreams {
     public Stream<String> streamWithLimit(List<String> strings, int count) {
         // TODO: check the documentation of Stream!
         // If you want, you can utilize the 'makeStream()' method you implemented above.
-        return null;
+
+        Stream<String> stream = strings.stream();
+
+        Stream<String> streamLimit = stream.limit(count);
+        
+        return streamLimit;
     }
 
 }
