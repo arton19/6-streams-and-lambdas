@@ -1,5 +1,6 @@
 package part01;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
@@ -31,7 +32,12 @@ public class IntegerStreams {
          * numbers. A closed range means that the 'to' value is included in the range,
          * whereas an open range does not include the 'to' value.
          */
-        return null; // TODO
+
+        IntStream luvutStream = IntStream.rangeClosed(from, to);
+
+        return luvutStream;
+
+        
     }
 
     /**
@@ -45,7 +51,12 @@ public class IntegerStreams {
          * hint: see the documentation of IntStream about how to get the sum of the
          * numbers in a stream.
          */
-        return -1; // TODO
+
+
+        IntStream luvutStream = stream;
+
+        int summa = luvutStream.sum();
+        return summa; 
     }
 
     /**
@@ -63,6 +74,11 @@ public class IntegerStreams {
          * hint: see the documentation of IntStream about how to count the number of
          * elements in the stream.
          */
-        return -1; // TODO
+
+        IntStream luvutStream = stream;
+    ;
+        long maara = luvutStream.count();
+
+        return maara;
     }
 }
