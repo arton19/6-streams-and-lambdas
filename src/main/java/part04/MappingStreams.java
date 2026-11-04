@@ -31,7 +31,10 @@ public class MappingStreams {
      */
     public IntStream doubleValuesInStream(IntStream numbers) {
         // hint: use the map() method to double the values in the stream.
-        return null; // TODO
+
+        IntStream numerot = numbers.map(numero -> numero*2);
+        return numerot;
+            
     }
 
     /**
@@ -44,7 +47,9 @@ public class MappingStreams {
      */
     public IntStream multiplyValuesInStream(IntStream numbers, int multiplier) {
         // hint: use the map() method to multiply the values in the stream.
-        return null; // TODO
+
+        IntStream numerot = numbers.map(numero -> numero*multiplier);
+        return numerot;
     }
 
     /**
@@ -58,7 +63,10 @@ public class MappingStreams {
          * hint: First, use the stream() method to create a Stream<Integer>.
          * Then, use mapToInt() method to convert that to an IntStream.
          */
-        return null; // TODO
+
+
+        IntStream numerot = numbers.stream().mapToInt(numero -> numero);
+        return numerot; 
     }
 
     /**
@@ -76,7 +84,9 @@ public class MappingStreams {
      */
     public Stream<String> prefixAllStrings(Stream<String> strings, String prefix) {
         // hint: once again, use the map() method to add the prefix
-        return null; // TODO
+
+        Stream<String> merkkijono = strings.map(numero -> prefix + numero);
+        return merkkijono; 
     }
 
     /**
@@ -92,7 +102,8 @@ public class MappingStreams {
      * @return a stream of strings with the suffix added
      */
     public Stream<String> suffixAllStrings(Stream<String> strings, String suffix) {
-        return null; // TODO
+        Stream<String> merkkijono = strings.map(numero -> numero + suffix);
+        return merkkijono; 
     }
 
     /**
@@ -113,9 +124,17 @@ public class MappingStreams {
          * hint: If your expression is too complex, you can define a separate method
          * that you call from the lambda expression.
          */
-        return null; // TODO
-    }
 
+        Stream<String> merkkijono = strings;
+
+        return merkkijono.map(merkki -> {
+            if (merkki.endsWith(suffix)) {
+                return merkki.substring(0, merkki.length() - suffix.length());
+            } else {
+                return merkki;
+            }
+        });
+    }
     /**
      * Returns a stream where all the numbers in the given stream are converted to
      * strings following the rules of the FizzBuzz game. For example, if the stream
@@ -137,6 +156,16 @@ public class MappingStreams {
          */
 
         // hint: see the mapToObj() method in IntStream
-        return null; // TODO
+        return numbers.mapToObj(numero -> {
+            if (numero % 3 == 0 && numero % 5 == 0) {
+                return "FizzBuzz";
+            } else if (numero % 3 == 0) {
+                return "Fizz";
+            } else if (numero % 5 == 0) {
+                return "Buzz";
+            } else {
+                return String.valueOf(numero);
+            }
+        });
     }
 }
