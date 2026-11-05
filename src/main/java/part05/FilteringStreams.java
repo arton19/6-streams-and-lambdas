@@ -25,7 +25,9 @@ public class FilteringStreams {
      */
     public IntStream filterEvenNumbers(IntStream numbers) {
         // hint: use the filter() method to filter out the odd numbers.
-        return null; // TODO
+
+        IntStream numerot = numbers.filter(numero -> numero%2 == 0);
+        return numerot; 
     }
 
     /**
@@ -40,7 +42,9 @@ public class FilteringStreams {
      */
     public IntStream filterNumbersBetween(IntStream numbers, int min, int max) {
         // hint: use the filter() method to only include numbers between min and max
-        return null; // TODO
+
+        IntStream numerot = numbers.filter(numero -> numero >= min && numero <= max);
+        return numerot; 
     }
 
     /**
@@ -56,7 +60,9 @@ public class FilteringStreams {
     public Stream<String> filterStringsStartingWith(Stream<String> strings, String prefix) {
         // hint: use the filter() method to only include strings that start with the
         // specified prefix.
-        return null; // TODO
+
+        Stream<String> merkkijono = strings.filter(sana -> sana.startsWith(prefix));
+        return merkkijono; 
     }
 
     /**
@@ -70,7 +76,9 @@ public class FilteringStreams {
      * @return a stream of strings that contain the specified substring
      */
     public Stream<String> filterIncludingSubstring(Stream<String> strings, String include) {
-        return null; // TODO
+
+        Stream<String> merkkijono = strings.filter(sana -> sana.contains(include));
+        return merkkijono;
     }
 
     /**
@@ -84,6 +92,8 @@ public class FilteringStreams {
      * @return a stream of strings that do not contain the specified substring
      */
     public Stream<String> filterNotIncludingSubstring(Stream<String> strings, String exclude) {
-        return null; // TODO
+
+        Stream<String> merkkijono = strings.filter(sana -> !sana.contains(exclude));
+        return merkkijono;
     }
 }
