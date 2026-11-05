@@ -20,7 +20,9 @@ public class PredicatesWithStreams {
      */
     public boolean allPositive(IntStream numbers) {
         // hint: see the `allMatch()` method
-        return false; // TODO
+
+        boolean numerot = numbers.allMatch(numero -> numero > 0);
+        return numerot;
     }
 
     /**
@@ -35,7 +37,9 @@ public class PredicatesWithStreams {
         /*
          * hint: you can chain the `filter()`, `findFirst()` and `isPresent()` methods.
          */
-        return -1; // TODO
+
+        int numerot = numbers.filter(numero -> numero > 0).findFirst().orElse(0);
+        return numerot; 
     }
 
     /**
@@ -46,6 +50,8 @@ public class PredicatesWithStreams {
      */
     public boolean containsNoNulls(Stream<String> strings) {
         // hint: see the `noneMatch()` method
-        return false; // TODO
+
+        boolean merkkijono = strings.noneMatch(sana -> sana == null);
+        return merkkijono;
     }
 }
